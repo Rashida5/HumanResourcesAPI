@@ -1,36 +1,24 @@
-package org.example.entities;
+package org.example.persistence.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
+@Setter
 @Embeddable
 public class EmployeeProjectId implements Serializable {
-    private static final long serialVersionUID = -3750108030823502200L;
+    private static final long serialVersionUID = 7383257497496234259L;
     @Column(name = "employee_id", nullable = false)
     private Integer employeeId;
 
     @Column(name = "project_id", nullable = false)
     private Integer projectId;
-
-    public Integer getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public Integer getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(Integer projectId) {
-        this.projectId = projectId;
-    }
 
     @Override
     public boolean equals(Object o) {

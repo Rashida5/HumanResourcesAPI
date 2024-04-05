@@ -4,6 +4,6 @@
     <option name="defaultUnitInitialized" value="true" />
     <option name="renamerInitialized" value="true" />
     <option name="reverseEngineeringLastDbConnectionId" value="b492fe03-3ffe-43f6-b2dd-fd23f67c352a" />
-    <option name="reLastEntityCreationPackage" value="RestAPI/src/main/java/org/example/entities" />
+    <option name="reLastEntityCreationPackage" value="RestAPI/src/main/java/org/example/persistence/entities" />
   </component>
 </project>
