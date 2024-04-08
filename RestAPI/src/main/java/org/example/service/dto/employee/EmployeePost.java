@@ -1,8 +1,12 @@
 package org.example.service.dto.employee;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EmployeePost {
     private int employeeId;
     private String firstName;

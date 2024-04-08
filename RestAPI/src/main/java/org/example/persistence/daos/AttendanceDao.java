@@ -1,4 +1,6 @@
 package org.example.persistence.daos;
 
-public interface AttendanceDao extends Dao<AttendanceDao> {
+import org.example.persistence.entities.Attendancetrack;
+
+public interface AttendanceDao extends Dao<Attendancetrack> {
 }

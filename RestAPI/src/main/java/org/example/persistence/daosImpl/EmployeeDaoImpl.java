@@ -2,9 +2,12 @@ package org.example.persistence.daosImpl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
 import org.example.persistence.daos.EmployeeDao;
 import org.example.persistence.entities.Employee;
 import org.example.persistence.entities.Position;
+
+import java.util.List;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 
@@ -47,6 +50,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         }
     }
 
+
     @Override
     public boolean delete(Employee entity, EntityManager em) {
         EntityTransaction transaction = null;
@@ -69,6 +73,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
             return false;
         }
     }
+
 
     private EmployeeDaoImpl(){
 

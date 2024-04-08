@@ -94,7 +94,9 @@ public class EmployeeServiceImpl implements EmployeeService {
             return false;
         }
         EntityManager em = JpaUtil.createEntityManager();
+
         Employee employee = EmployeeDaoImpl.getInstance().getById(employeePost.getEmployeeId(), em);
+
         employee = EmployeeUpdateMapper.getInstance().convertModelToEntity(employeePost, employee);
         boolean updated = EmployeeDaoImpl.getInstance().update(employee, em);
 
