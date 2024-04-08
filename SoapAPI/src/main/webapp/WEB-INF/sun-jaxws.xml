@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+    <endpoint
+            name="EmployeeService"
+            implementation="org.example.controller.EmployeeController"
+            url-pattern="/ws/employee" />
+
+
+    <endpoint
+            name="DepartmentService"
+            implementation="org.example.controller.DepartmentController"
+            url-pattern="/ws/department" />
+
+    <endpoint
+            name="AttendanceService"
+            implementation="org.example.controller.AttendanceController"
+            url-pattern="/ws/attendance" />
+
+
+    <endpoint
+            name="PositionService"
+            implementation="org.example.controller.PositionsController"
+            url-pattern="/ws/position" />
+
+</endpoints>

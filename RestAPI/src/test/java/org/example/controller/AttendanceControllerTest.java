@@ -15,7 +15,7 @@ class AttendanceControllerTest {
         attendancePost.setTime("14:10:19");
         attendancePost.setDate("2024-04-11");
         Response response = attendanceController.markArrive(attendancePost);
-        assertEquals(202, response.getStatus());
+        assertEquals(304, response.getStatus());
 
     }
 
