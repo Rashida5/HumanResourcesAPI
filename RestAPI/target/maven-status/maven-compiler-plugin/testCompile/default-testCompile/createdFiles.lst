@@ -1,0 +1,4 @@
+org\example\controller\DepartmentControllerTest.class
+org\example\controller\PositionsControllerTest.class
+org\example\controller\EmployeeControllerTest.class
+org\example\controller\AttendanceControllerTest.class

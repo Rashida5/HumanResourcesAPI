@@ -17,4 +17,9 @@ public class DepartmentPost {
         this.departmentName = departmentName;
         this.mangerId = mangerId;
     }
+
+    public DepartmentPost(String departmentName, int mangerId) {
+        this.departmentName = departmentName;
+        this.mangerId = mangerId;
+    }
 }

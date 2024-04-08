@@ -6,14 +6,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.example.service.dto.employee.EmployeeGet;
-import org.example.service.dto.position.PositionGet;
-import org.example.service.servicesImp.AttendanceServiceImpl;
-import org.example.service.servicesImp.EmployeeServiceImpl;
-import org.example.service.servicesImp.PositionServiceImpl;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Data
 @AllArgsConstructor

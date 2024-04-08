@@ -24,6 +24,7 @@ C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\dto\em
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\persistence\daos\AttendanceDao.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\services\DepartmentService.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\persistence\entities\Employee.java
+C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\dto\position\PositionPost.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\mapping\department\DepartmentGetMapper.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\persistence\entities\Address.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\persistence\daos\AddressDao.java
@@ -43,6 +44,7 @@ C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\dto\de
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\persistence\daosImpl\ProjectsDaoImpl.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\persistence\entities\Contact.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\persistence\util\JpaUtil.java
+C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\controller\PositionsController.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\mapping\employee\EmployeeUpdateMapper.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\mapping\EntityMapperToModel.java
 C:\Users\Rashida\Desktop\HR_API\RestAPI\src\main\java\org\example\service\mapping\ModelToEntityMapper.java
