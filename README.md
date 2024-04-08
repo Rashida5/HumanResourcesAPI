@@ -30,7 +30,7 @@ we apply the apis system by two technologies REST and Soap
 - Get data about attendance of employee 
 ## Entity Relation Diagram
 
-![ERD](C:\Users\Rashida\Desktop\HR_API\images\erd.png)
+![ERD](https://github.com/Rashida5/HumanResourcesAPI/blob/main/images/erd.png)
 
 
 
