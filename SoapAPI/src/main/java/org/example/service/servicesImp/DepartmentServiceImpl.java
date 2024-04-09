@@ -7,9 +7,14 @@ import org.example.persistence.entities.Employee;
 import org.example.persistence.util.JpaUtil;
 import org.example.service.dto.department.DepartmentGet;
 import org.example.service.dto.department.DepartmentPost;
+import org.example.service.dto.employee.EmployeeGet;
 import org.example.service.mapping.department.DepartmentGetMapper;
 import org.example.service.mapping.department.DepartmentPostMapper;
+import org.example.service.mapping.project.EmployeeGetMapper;
 import org.example.service.services.DepartmentService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DepartmentServiceImpl implements DepartmentService {
 
@@ -70,6 +75,24 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
         em.close();
         return departmentGet;
+    }
+    @Override
+    public List<EmployeeGet> getEmployeesInDepartment(int deptId) {
+        EntityManager em = JpaUtil.createEntityManager();
+        Department department = DepartmentDaoImpl.getInstance().getById(deptId, em);
+        if(department==null)
+            return null;
+        List<Employee> employees = DepartmentDaoImpl.getInstance().getEmployeeOfDepartment(deptId, em);
+        if(employees==null){
+            em.close();
+            return new ArrayList<>();}
+        List<EmployeeGet> employeeGetList = new ArrayList<>();
+        for(Employee employee1: employees){
+            EmployeeGet employeeGet = EmployeeGetMapper.getInstance().convertEntityToModel(employee1);
+            employeeGetList.add(employeeGet);
+        }
+        em.close();
+        return employeeGetList;
     }
 
 //    @Override

@@ -2,9 +2,13 @@ package org.example.controller;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
-import org.example.service.dto.employee.EmployeeGet;
+import org.example.service.dto.employee.EmployeeGetDetail;
 import org.example.service.dto.employee.EmployeePost;
+import org.example.service.dto.project.ProjectGet;
 import org.example.service.servicesImp.EmployeeServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @WebService
 public class EmployeeController {
@@ -12,8 +16,8 @@ public class EmployeeController {
 
     }
   @WebResult(name = "getEmployee")
-    public EmployeeGet getEmployee(@WebParam(name="Id") int id){
-       EmployeeGet employeeGet= EmployeeServiceImpl.getInstance().getEmployeeById(id);
+    public EmployeeGetDetail getEmployee(@WebParam(name="Id") int id){
+       EmployeeGetDetail employeeGet= EmployeeServiceImpl.getInstance().getEmployeeById(id);
        return employeeGet;
     }
     @WebResult(name="addEmployee")
@@ -42,6 +46,13 @@ public class EmployeeController {
         }else{
             return "Failed To Deleted";
         }
+    }
+   @WebResult(name = "getProjects")
+    public List<ProjectGet> getProjects(@WebParam(name="Id") int employeeId){
+        List<ProjectGet> projects = EmployeeServiceImpl.getInstance().getProjectEmployeeWorkOn(employeeId);
+        if(projects==null)
+            return new ArrayList<>();
+        return projects;
     }
 
 }

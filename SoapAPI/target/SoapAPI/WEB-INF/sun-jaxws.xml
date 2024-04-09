@@ -24,4 +24,9 @@
             implementation="org.example.controller.PositionsController"
             url-pattern="/ws/position" />
 
+    <endpoint
+            name="ProjectService"
+            implementation="org.example.controller.ProjectController"
+            url-pattern="/ws/project" />
+
 </endpoints>

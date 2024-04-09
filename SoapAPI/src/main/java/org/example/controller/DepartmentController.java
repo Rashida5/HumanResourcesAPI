@@ -3,12 +3,14 @@ package org.example.controller;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
 import org.example.service.dto.department.DepartmentGet;
 import org.example.service.dto.department.DepartmentPost;
+import org.example.service.dto.employee.EmployeeGet;
 import org.example.service.servicesImp.DepartmentServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 @WebService
 public class DepartmentController {
@@ -40,6 +42,14 @@ public class DepartmentController {
       }else{
           return "Failed To updated";
       }
+    }
+  @WebResult(name="employeesWorkOnDepartment")
+    public List<EmployeeGet> getEmployees(@WebParam(name="Id") int deptId){
+        List<EmployeeGet> list = DepartmentServiceImpl.getInstance().getEmployeesInDepartment(deptId);
+        if(list==null){
+            return new ArrayList<>();
+        }
+        return list;
     }
 
 

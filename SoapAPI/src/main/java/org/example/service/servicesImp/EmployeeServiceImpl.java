@@ -4,19 +4,25 @@ import jakarta.persistence.EntityManager;
 import org.example.persistence.daosImpl.AddressDaoImpl;
 import org.example.persistence.daosImpl.ContactDaoImp;
 import org.example.persistence.daosImpl.EmployeeDaoImpl;
+import org.example.persistence.daosImpl.ProjectEmployeeDaoImpl;
 import org.example.persistence.entities.Address;
 import org.example.persistence.entities.Contact;
 import org.example.persistence.entities.Employee;
+import org.example.persistence.entities.Project;
 import org.example.persistence.util.JpaUtil;
-import org.example.service.dto.employee.EmployeeGet;
+import org.example.service.dto.employee.EmployeeGetDetail;
 import org.example.service.dto.employee.EmployeePost;
 import org.example.service.dto.employee.MonthlyEmployeeTracking;
-import org.example.service.mapping.employee.EmployeeGetMapper;
+import org.example.service.dto.project.ProjectGet;
+import org.example.service.mapping.employee.EmployeeDetailGetMapper;
 import org.example.service.mapping.employee.EmployeePostMapper;
 import org.example.service.mapping.employee.EmployeeUpdateMapper;
+import org.example.service.mapping.project.GetProjectMapping;
 import org.example.service.services.EmployeeService;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -64,14 +70,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeGet getEmployeeById(int id) {
+    public EmployeeGetDetail getEmployeeById(int id) {
         EntityManager em = JpaUtil.createEntityManager();
         Employee employee = EmployeeDaoImpl.getInstance().getById(id,em);
         if(employee==null){
             em.close();
-            return new EmployeeGet();
+            return new EmployeeGetDetail();
         }else{
-            EmployeeGet employeeGet = EmployeeGetMapper.getInstance().convertEntityToModel(employee);
+            EmployeeGetDetail employeeGet = EmployeeDetailGetMapper.getInstance().convertEntityToModel(employee);
             Address address = AddressDaoImpl.getInstance().getAddressByEmployeeId(employee.getId(), em);
             Contact contact = ContactDaoImp.getInstance().getContactByEmployeeId(employee.getId(), em);
             if(address!=null) {
@@ -178,6 +184,28 @@ public class EmployeeServiceImpl implements EmployeeService {
         if(instance==null)
             instance = new EmployeeServiceImpl();
         return instance;
+    }
+    @Override
+    public List<ProjectGet> getProjectEmployeeWorkOn(int id) {
+        EntityManager em = JpaUtil.createEntityManager();
+        Employee employee = EmployeeDaoImpl.getInstance().getById(id, em);
+        if(employee==null){
+            List<ProjectGet> projectGets = null;
+            em.close();
+            return projectGets;
+        }
+        List<Project> projects = ProjectEmployeeDaoImpl.getInstance().getProjectsThatEmployeeWorksOn(id, em);
+        if(projects==null){
+            em.close();
+            return new ArrayList<>();
+        }
+        List<ProjectGet> list = new ArrayList<>();
+        for(Project project:projects){
+            ProjectGet projectGet = GetProjectMapping.getInstance().convertEntityToModel(project);
+            list.add(projectGet);
+        }
+        em.close();
+        return list;
     }
 
 }
