@@ -39,6 +39,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
     @Override
     public Department getById(int id, EntityManager em) {
+
         return em.find(Department.class, id);
     }
     public Department getByName(String name, EntityManager em){

@@ -24,10 +24,10 @@ public class Department {
     @JoinColumn(name = "manager_id")
     private Employee manager;
 
-    @OneToMany(mappedBy = "department")
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Employee> employees = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "department")
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Project> projects = new LinkedHashSet<>();
 
 }

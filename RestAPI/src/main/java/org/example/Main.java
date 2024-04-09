@@ -1,28 +1,53 @@
 package org.example;
 
 
-import org.example.persistence.daosImpl.EmployeeDaoImpl;
-import org.example.service.dto.attendance.AttendanceGet;
-import org.example.service.dto.department.DepartmentPost;
 import org.example.service.dto.employee.EmployeeGet;
-import org.example.service.dto.employee.EmployeePost;
-import org.example.service.dto.position.PositionGet;
-import org.example.service.services.EmployeeService;
-import org.example.service.services.PositionsService;
-import org.example.service.servicesImp.AttendanceServiceImpl;
-import org.example.service.servicesImp.DepartmentServiceImpl;
-import org.example.service.servicesImp.EmployeeServiceImpl;
-import org.example.service.servicesImp.PositionServiceImpl;
+import org.example.service.dto.project.ProjectGet;
+import org.example.service.dto.project.ProjectPost;
+import org.example.service.mapping.project.EmployeeGetMapper;
+import org.example.service.servicesImp.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        ProjectPost projectPost = new ProjectPost();
+//        projectPost.setProjectID(1);
+//        projectPost.setProjectName("new Cairo");
+//       projectPost.setStartDate("2021-08-11");
+//        projectPost.setEndDate("2023-09-11");
+//        projectPost.setDepartmentId(1);
+//        boolean added = ProjectServiceImpl.getInstance().addProject(projectPost);
+//        System.out.println(added);
+
+//        List<ProjectGet> projects = EmployeeServiceImpl.getInstance().getProjectEmployeeWorkOn(1);
+//        for(ProjectGet projectGet:projects){
+//            System.out.println(projectGet);
+//        }
+        List<EmployeeGet> list = DepartmentServiceImpl.getInstance().getEmployeesInDepartment(1);
+        for(EmployeeGet emp:list){
+            System.out.println(emp);
+        }
+
+      //   boolean updated = ProjectServiceImpl.getInstance().updateProject(projectPost);
+        // List<EmployeeProjectGet> employeeGets = ProjectServiceImpl.getInstance().getEmployeeWorkOnProject(1);
+      //EmployeeGet employeeGetData = EmployeeServiceImpl.getInstance().getEmployeeById(2);
+
+//        boolean deleted = ProjectServiceImpl.getInstance().deleteEmployeeFromProject(1,1);
+//        System.out.println(deleted);
+//         for(EmployeeProjectGet employeeGet:employeeGets){
+//             System.out.println(employeeGet);
+//         }
+//         System.out.println(employeeGetData);
+
+        // boolean added = ProjectServiceImpl.getInstance().addEmployeeToProject(2,1);
+     //  ProjectGet projectGet= ProjectServiceImpl.getInstance().getProject(1);
+        // System.out.println(updated);
+         //System.out.println(projectGet);
 //            PositionsService positionsService = PositionServiceImpl.getInstance();
 //
 //       //    boolean added= positionsService.addPosition("Software Engineer", 20000);

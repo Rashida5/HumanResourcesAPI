@@ -1,15 +1,15 @@
 package org.example.service.mapping.employee;
 
 import org.example.persistence.entities.Employee;
-import org.example.service.dto.employee.EmployeeGet;
+import org.example.service.dto.employee.EmployeeGetDetail;
 import org.example.service.mapping.EntityMapperToModel;
 
-public class EmployeeGetMapper implements EntityMapperToModel<EmployeeGet, Employee> {
+public class EmployeeDetailGetMapper implements EntityMapperToModel<EmployeeGetDetail, Employee> {
 
-    private static EmployeeGetMapper instance;
+    private static EmployeeDetailGetMapper instance;
     @Override
-    public EmployeeGet convertEntityToModel(Employee e) {
-        EmployeeGet employeeGet = new EmployeeGet();
+    public EmployeeGetDetail convertEntityToModel(Employee e) {
+        EmployeeGetDetail employeeGet = new EmployeeGetDetail();
         employeeGet.setEmployeeId(e.getId());
         employeeGet.setFirstName(e.getFirstName());
         employeeGet.setLastName(e.getLastName());
@@ -24,12 +24,12 @@ public class EmployeeGetMapper implements EntityMapperToModel<EmployeeGet, Emplo
         return employeeGet;
     }
 
-    private EmployeeGetMapper(){
+    private EmployeeDetailGetMapper(){
 
     }
-    public static EmployeeGetMapper getInstance(){
+    public static EmployeeDetailGetMapper getInstance(){
         if(instance==null)
-            instance = new EmployeeGetMapper();
+            instance = new EmployeeDetailGetMapper();
         return instance;
     }
 }
