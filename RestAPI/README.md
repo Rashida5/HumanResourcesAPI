@@ -1,5 +1,8 @@
 # HR-System-Using-RestAPI
 this rest apis enable CRUD operation for each Entity
+
+## Documentation 
+https://documenter.getpostman.com/view/24971171/2sA35MzzVr
 ### Technologies
 - [x] JAX-RS (Jersey)
 - [x] Jakarta persistance (Hibernate)

@@ -10,4 +10,7 @@ import lombok.Data;
 public class PositionPost {
     private String name;
     private int salary;
+    public PositionPost(){
+
+    }
 }
