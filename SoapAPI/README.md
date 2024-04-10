@@ -5,6 +5,12 @@ this rest apis enable CRUD operation for each Entity
 - [x] JAX-B
 - [x] Jakarta persistance (Hibernate)
 - [x] SoapUI
+## Documentation
+- Employee : https://documenter.getpostman.com/view/24971171/2sA3BgBw2g
+- Attendance : https://documenter.getpostman.com/view/24971171/2sA3BgBw2f
+- Project : https://documenter.getpostman.com/view/24971171/2sA3BgBw6w
+- Department : https://documenter.getpostman.com/view/24971171/2sA3BgBw6y
+- Position : https://documenter.getpostman.com/view/24971171/2sA3BgBw71
 ## Features
 
 ### Employees
